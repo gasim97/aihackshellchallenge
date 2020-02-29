@@ -21,14 +21,16 @@ const dashboardStyles = {
     },
     header: {
         backgroundColor: colorScheme.primary,
-        position: "fixed",
-        top: "0",
+        // position: "fixed",
+        // top: "0",
         padding: "1%",
-        maxHeight: "4%",
+        maxHeight: "10%",
         width: "100%",
+        borderBottomRightRadius: "25%",
+        borderBottomLeftRadius: "25%",
     },
     body: {
-        marginTop: "5%",
+        marginTop: "0%",
     },
     item: {
         padding: "2%"
