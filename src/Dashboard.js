@@ -3,7 +3,6 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 // import logo from './logo.png';
 
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -93,32 +92,24 @@ class Dashboard extends Component {
 
                 <Grid container xs={12} >
                     <Grid item xs={6} style={dashboardStyles.item}>
-                        <Typography variant="h5" component="h5" noWrap={true} align="center">
-                            System status messages
-                        </Typography>
+                        <h3 className="title">System status messages</h3>
                     </Grid>
 
                     <Grid item xs={6} style={dashboardStyles.item}>
-                        <Typography variant="h5" component="h5" noWrap={true} align="center">
-                            Investigate
-                        </Typography>
+                        <h3 className="title">Investigate</h3>
                         <Paper style={dashboardStyles.paper}>
-                            <List dense component="div" role="list">
-                                <ListItem>No anomolies</ListItem>
-                            </List>
+                            <p>No Anomolies Detected</p>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={12} style={dashboardStyles.item}>
-                        <Typography variant="h5" component="h5" noWrap={true} align="center">
                             Chart
-                        </Typography>
                     </Grid>
 
                     <Grid item xs={12} style={dashboardStyles.item}>
-                        <Typography variant="p" component="p" noWrap={true} align="left">
+                        <p>
                             Select a time instant
-                        </Typography>
+                        </p>
                         <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChangeCommitted={(_, value) => {this.setState({sliderValue: value})}} />
                     </Grid>
 
