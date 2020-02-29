@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-// import logo from './logo.png';
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -22,11 +21,14 @@ const dashboardStyles = {
     },
     header: {
         backgroundColor: colorScheme.primary,
-        // position: "fixed",
-        // top: "0",
-        padding: "3%",
-        minHeight: "10%",
+        position: "fixed",
+        top: "0",
+        padding: "1%",
+        maxHeight: "10%",
         width: "100%",
+    },
+    body: {
+        marginTop: "5%",
     },
     item: {
         padding: "3%"
@@ -36,6 +38,16 @@ const dashboardStyles = {
         minHeight: 230,
         overflow: 'auto',
     },
+    logo: {
+        maxHeight: "5vh",
+        width: "auto",
+        paddingTop: "1%",
+        paddingLeft: "3%",
+    },
+    headerTitle: {
+        color: colorScheme.secondary,
+        paddingRight: "3%",
+    }
 };
 
 const PrettoSlider = withStyles({
@@ -85,12 +97,22 @@ class Dashboard extends Component {
         return (
             <Grid xs={12} style={dashboardStyles.page}>
 
-                <Grid item xs={12} style={dashboardStyles.header}>
-
-                    {/* <img src={logo} alt={"Logo"}/> */}
+                <Grid container xs={12} style={dashboardStyles.header}>
+                    <Grid item xs={6} align="left">
+                        <img 
+                            src={"https://www.wikizeroo.org/index.php?q=aHR0cDovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9lbi90aHVtYi9lL2U4L1NoZWxsX2xvZ28uc3ZnLzI3MnB4LVNoZWxsX2xvZ28uc3ZnLnBuZw"} 
+                            alt={"Logo"}
+                            style={dashboardStyles.logo}
+                        />
+                    </Grid>
+                    <Grid item xs={6} align="right">
+                        <h3 className="title" style={dashboardStyles.headerTitle}>
+                            LPC Anomaly Detection
+                        </h3>
+                    </Grid>
                 </Grid>
 
-                <Grid container xs={12} >
+                <Grid container xs={12} style={dashboardStyles.body}>
                     <Grid item xs={6} style={dashboardStyles.item}>
                         <h3 className="title">System status messages</h3>
                     </Grid>
