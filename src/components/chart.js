@@ -58,7 +58,7 @@ function MyChart() {
           height: '300px'
         }}
       >
-        <Chart data={data} axes={axes} />
+        <Chart data={data} axes={axes} style={{width: "80%"}}/>
       </div>
     )
   }
