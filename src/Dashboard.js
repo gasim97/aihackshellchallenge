@@ -24,19 +24,25 @@ const dashboardStyles = {
         position: "fixed",
         top: "0",
         padding: "1%",
-        maxHeight: "10%",
+        maxHeight: "4%",
         width: "100%",
     },
     body: {
         marginTop: "5%",
     },
     item: {
-        padding: "3%"
+        padding: "2%"
     },
     paper: {
         minWidth: 200,
         minHeight: 230,
         overflow: 'auto',
+    },
+    chartPaper: {
+        minWidth: 200,
+        minHeight: 230,
+        overflow: 'auto',
+        padding: "2%",
     },
     logo: {
         maxHeight: "5vh",
@@ -96,7 +102,6 @@ class Dashboard extends Component {
     render() {
         return (
             <Grid xs={12} style={dashboardStyles.page}>
-
                 <Grid container xs={12} style={dashboardStyles.header}>
                     <Grid item xs={6} align="left">
                         <img 
@@ -114,25 +119,26 @@ class Dashboard extends Component {
 
                 <Grid container xs={12} style={dashboardStyles.body}>
                     <Grid item xs={6} style={dashboardStyles.item}>
-                        <h3 className="title">System status messages</h3>
-                    </Grid>
-
-                    <Grid item xs={6} style={dashboardStyles.item}>
-                        <h3 className="title">Investigate</h3>
-                        <Paper style={dashboardStyles.paper}>
-                            <p>No Anomolies Detected</p>
+                        <Paper elevation={4} style={dashboardStyles.paper}>
+                            <h3 className="title">System status messages</h3>
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={12} style={dashboardStyles.item}>
-                        <MyChart />
+                    <Grid item xs={6} style={dashboardStyles.item}>
+                        <Paper elevation={4} style={dashboardStyles.paper}>
+                            <h3 className="title">Investigate</h3>
+                            <p>No Anomolies Detected</p>
+                        </Paper>
                     </Grid>
-
+                    
                     <Grid item xs={12} style={dashboardStyles.item}>
-                        <p>
-                            Select a time instant
-                        </p>
-                        <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChangeCommitted={(_, value) => {this.setState({sliderValue: value})}} />
+                        <Paper elevation={4} style={dashboardStyles.chartPaper}>
+                            <MyChart />
+                            <p>
+                                Select a time instant
+                            </p>
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChangeCommitted={(_, value) => {this.setState({sliderValue: value})}} />
+                        </Paper>
                     </Grid>
 
                 </Grid>
