@@ -70,12 +70,12 @@ const PrettoSlider = withStyles({
 })(Slider);
 
 
-class Dahsboard extends Component {
+class Dashboard extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            faliureState: false,
-            probabilityOfFaliure: null,
+            failureState: false,
+            probabilityOfFailure: null,
             predictionData: [],
             anomalyData: [],
             sliderValue: 0,
@@ -87,7 +87,7 @@ class Dahsboard extends Component {
             <Grid xs={12} style={dashboardStyles.page}>
 
                 <Grid item xs={12} style={dashboardStyles.header}>
-                    
+
                     {/* <img src={logo} alt={"Logo"}/> */}
                 </Grid>
 
@@ -129,4 +129,4 @@ class Dahsboard extends Component {
     }
 }
 
-export default Dahsboard
+export default Dashboard
