@@ -1,20 +1,26 @@
 import React from 'react'
 import { Chart } from 'react-charts'
+import * as anomaly_1 from "../data/anomaly_1.json";
+
+function get_trip_risk() {
+    var trip_risk = [];
+    const data = anomaly_1.values;
+    const sample_size = data.length;
+    for (var i = 0; i < sample_size; i++) {
+        trip_risk.push(
+            {x: i,
+            y: data[i].trip_risk}
+        )
+    }
+    return trip_risk;
+}
  
 function MyChart() {
     const data = React.useMemo(
       () => [
         {
           label: 'Series 1',
-          data: [{ x: 1, y: 5 }, { x: 2, y: 10 }, { x: 3, y: 16 }]
-        },
-        {
-          label: 'Series 2',
-          data: [{ x: 1, y: 3 }, { x: 2, y: 6 }, { x: 3, y: 1 }]
-        },
-        {
-          label: 'Series 3',
-          data: [{ x: 1, y: 12 }, { x: 2, y: 5 }, { x: 3, y: 9 }]
+          data: get_trip_risk()
         }
       ],
       []
