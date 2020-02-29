@@ -9,6 +9,9 @@ import ListItem from '@material-ui/core/ListItem';
 
 import Slider from '@material-ui/core/Slider';
 import MyChart from './components/chart';
+import Play from './components/Play';
+import Pause from './components/Pause';
+import * as anomaly_1 from "./data/anomaly_1.json";
 
 
 const colorScheme = {
@@ -56,6 +59,21 @@ const dashboardStyles = {
     headerTitle: {
         color: colorScheme.secondary,
         paddingRight: "3%",
+    },
+    playButton: {
+        position: "relative",
+        width: "4.5vh",
+        height: "3vh",
+        backgroundColor: "#FED500",
+        borderRadius: "0.3vh",
+        marginTop: "1vh",
+        cursor: "pointer"
+    },
+    playButtonSvg: {
+        width: "2vh",
+        position: "absolute",
+        top: "0.5vh",
+        left: "1.5vh"
     }
 };
 
@@ -100,11 +118,43 @@ class Dashboard extends Component {
             anomalyData: [],
             sliderValue: 0,
             mobile: false,
+            playing: false,
         }
     }
 
     componentDidMount() {
         this.setState({mobile: isMobile});
+        setInterval(() => this.updateSliderValue(), 200)
+    }
+
+    updateSliderValue() {
+        if (this.state.playing) {
+            if (this.state.sliderValue < 100) {
+                this.setState(prevState => ({
+                    sliderValue: prevState.sliderValue + 1
+                }))
+            } else {
+                this.setState({sliderValue: 0})
+            }
+        }
+    }
+
+    getInvestigateSensors() {
+        const listItems = anomaly_1.values[this.state.sliderValue].dodgy_sensors.map((d) => <p key={Object.keys(d)[0]}>{Object.keys(d)[0]}: {Object.values(d)[0]}</p>)
+        return listItems
+    }
+
+    getSystemStatus() {
+        const status = anomaly_1.values[this.state.sliderValue].status;
+        return status
+    }
+
+    handlePlayerClick = () => {
+      if (!this.state.playing) {
+        this.setState({playing: true})
+      } else {
+        this.setState({playing: false})
+      }
     }
 
     render() {
@@ -129,13 +179,14 @@ class Dashboard extends Component {
                     <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.paper}>
                             <h3 className="title">System status messages</h3>
+                            <div>{this.getSystemStatus()}</div>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.paper}>
                             <h3 className="title">Investigate</h3>
-                            <p>No Anomolies Detected</p>
+                            <div>{this.getInvestigateSensors()}</div>
                         </Paper>
                     </Grid>
                     
@@ -145,7 +196,12 @@ class Dashboard extends Component {
                             <p>
                                 Select a time instant
                             </p>
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChangeCommitted={(_, value) => {this.setState({sliderValue: value})}} />
+                            <PrettoSlider value={this.state.sliderValue} valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChange={(_, value) => {this.setState({sliderValue: value})}} />
+                            <div style={dashboardStyles.playButton}>
+                                <div style={dashboardStyles.playButtonSvg}>
+                                    {this.state.playing? <Pause onPlayerClick={this.handlePlayerClick} /> : <Play onPlayerClick={this.handlePlayerClick} />}
+                                </div>
+                            </div>
                         </Paper>
                     </Grid>
 
