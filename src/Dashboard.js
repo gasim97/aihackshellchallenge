@@ -112,7 +112,7 @@ class Dashboard extends Component {
                     </Grid>
                     <Grid item xs={6} align="right">
                         <h3 className="title" style={dashboardStyles.headerTitle}>
-                            LPC Anomaly Detection
+                            Just Vibes LPC Monitor
                         </h3>
                     </Grid>
                 </Grid>
