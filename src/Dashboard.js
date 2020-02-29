@@ -9,6 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 
 import Slider from '@material-ui/core/Slider';
 import MyChart from './components/chart';
+import * as anomaly_1 from "./data/anomaly_1.json";
 
 
 const colorScheme = {
@@ -107,6 +108,16 @@ class Dashboard extends Component {
         this.setState({mobile: isMobile});
     }
 
+    getInvestigateSensors() {
+        const listItems = anomaly_1.values[this.state.sliderValue].dodgy_sensors.map((d) => <p>{Object.keys(d)[0]}: {Object.values(d)[0]}</p>)
+        return listItems
+    }
+
+    getSystemStatus() {
+        const status = anomaly_1.values[this.state.sliderValue].status;
+        return status
+    }
+
     render() {
         return (
             <Grid xs={12} style={dashboardStyles.page}>
@@ -129,13 +140,14 @@ class Dashboard extends Component {
                     <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.paper}>
                             <h3 className="title">System status messages</h3>
+                            <p>{this.getSystemStatus()}</p>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.paper}>
                             <h3 className="title">Investigate</h3>
-                            <p>No Anomolies Detected</p>
+                            <p>{this.getInvestigateSensors()}</p>
                         </Paper>
                     </Grid>
                     
@@ -145,7 +157,7 @@ class Dashboard extends Component {
                             <p>
                                 Select a time instant
                             </p>
-                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChangeCommitted={(_, value) => {this.setState({sliderValue: value})}} />
+                            <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChange={(_, value) => {this.setState({sliderValue: value})}} />
                         </Paper>
                     </Grid>
 
