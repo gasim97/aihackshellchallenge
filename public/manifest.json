@@ -1,6 +1,6 @@
 {
-  "short_name": "Just Vibes",
-  "name": "Just Vibes LPC Anomaly Detector",
+  "short_name": "JV LPC",
+  "name": "LPC Monitor",
   "icons": [
     {
       "src": "logo192.png",

@@ -56,6 +56,10 @@ const dashboardStyles = {
         paddingTop: "1%",
         paddingLeft: "3%",
     },
+    justVibesLogo: {
+        maxHeight: "10vh",
+        width: "auto",
+    },
     headerTitle: {
         color: colorScheme.secondary,
         paddingRight: "3%",
@@ -168,9 +172,16 @@ class Dashboard extends Component {
                             style={dashboardStyles.logo}
                         />
                     </Grid>
-                    <Grid item xs={6} align="right">
+                    <Grid item xs={this.state.mobile ? 3 : 5} align="right">
+                        <img 
+                            src={"https://imgur.com/vi300wM.png"} 
+                            alt={"Logo"}
+                            style={dashboardStyles.justVibesLogo}
+                        />
+                    </Grid>
+                    <Grid item xs={this.state.mobile ? 3 : 1} align="left">
                         <h3 className="title" style={dashboardStyles.headerTitle}>
-                            Just Vibes LPC Monitor
+                            LPC Monitor
                         </h3>
                     </Grid>
                 </Grid>
