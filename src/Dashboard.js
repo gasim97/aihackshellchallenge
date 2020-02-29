@@ -7,8 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-import { Chart } from 'react-charts'
 import Slider from '@material-ui/core/Slider';
+import MyChart from './components/chart';
 
 
 const colorScheme = {
@@ -103,7 +103,7 @@ class Dashboard extends Component {
                     </Grid>
 
                     <Grid item xs={12} style={dashboardStyles.item}>
-                            Chart
+                        <MyChart />
                     </Grid>
 
                     <Grid item xs={12} style={dashboardStyles.item}>
