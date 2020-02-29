@@ -73,7 +73,7 @@ const dashboardStyles = {
         width: "2vh",
         position: "absolute",
         top: "0.5vh",
-        left: "1.5vh"
+        left: "1.6vh"
     }
 };
 
