@@ -14,6 +14,19 @@ function get_trip_risk() {
     }
     return trip_risk;
 }
+
+function get_anomalies() {
+    var anomalies = [];
+    const data = anomaly_1.values;
+    const sample_size = data.length;
+    for (var i = 0; i < sample_size; i++) {
+        anomalies.push(
+            {x: i,
+            y: data[i].anomaly}
+        )
+    }
+    return anomalies;
+}
  
 function MyChart() {
     const data = React.useMemo(
@@ -21,6 +34,10 @@ function MyChart() {
         {
           label: 'Series 1',
           data: get_trip_risk()
+        },
+        {
+            label: 'Series 2',
+            data: get_anomalies()
         }
       ],
       []
