@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+
+import { Chart } from 'react-charts'
 import Slider from '@material-ui/core/Slider';
 
 
@@ -76,6 +78,7 @@ class Dahsboard extends Component {
             probabilityOfFaliure: null,
             predictionData: [],
             anomalyData: [],
+            sliderValue: 0,
         }
     }
 
@@ -116,7 +119,7 @@ class Dahsboard extends Component {
                         <Typography variant="p" component="p" noWrap={true} align="left">
                             Select a time instant
                         </Typography>
-                        <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={20} />
+                        <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChangeCommitted={(_, value) => {this.setState({sliderValue: value})}} />
                     </Grid>
 
                 </Grid>
