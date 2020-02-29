@@ -3,6 +3,7 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import { isMobile } from 'react-device-detect';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
@@ -98,7 +99,12 @@ class Dashboard extends Component {
             predictionData: [],
             anomalyData: [],
             sliderValue: 0,
+            mobile: false,
         }
+    }
+
+    componentDidMount() {
+        this.setState({mobile: isMobile});
     }
 
     render() {
@@ -120,13 +126,13 @@ class Dashboard extends Component {
                 </Grid>
 
                 <Grid container xs={12} style={dashboardStyles.body}>
-                    <Grid item xs={6} style={dashboardStyles.item}>
+                    <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.paper}>
                             <h3 className="title">System status messages</h3>
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={6} style={dashboardStyles.item}>
+                    <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.paper}>
                             <h3 className="title">Investigate</h3>
                             <p>No Anomolies Detected</p>
