@@ -57,8 +57,9 @@ const dashboardStyles = {
         paddingLeft: "3%",
     },
     justVibesLogo: {
-        maxHeight: "10vh",
+        maxHeight: "8vh",
         width: "auto",
+        paddingRight: "3%",
     },
     headerTitle: {
         color: colorScheme.secondary,
@@ -165,24 +166,24 @@ class Dashboard extends Component {
         return (
             <Grid xs={12} style={dashboardStyles.page}>
                 <Grid container xs={12} style={dashboardStyles.header}>
-                    <Grid item xs={6} align="left">
+                    <Grid item xs={4} align="left">
                         <img 
                             src={"https://www.wikizeroo.org/index.php?q=aHR0cDovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9lbi90aHVtYi9lL2U4L1NoZWxsX2xvZ28uc3ZnLzI3MnB4LVNoZWxsX2xvZ28uc3ZnLnBuZw"} 
                             alt={"Logo"}
                             style={dashboardStyles.logo}
                         />
                     </Grid>
-                    <Grid item xs={this.state.mobile ? 3 : 5} align="right">
+                    <Grid item xs={4} align="center">
+                        <h3 className="title" style={dashboardStyles.headerTitle}>
+                            LPC Monitor
+                        </h3>
+                    </Grid>
+                    <Grid item xs={4} align="right">
                         <img 
                             src={"https://imgur.com/vi300wM.png"} 
                             alt={"Logo"}
                             style={dashboardStyles.justVibesLogo}
                         />
-                    </Grid>
-                    <Grid item xs={this.state.mobile ? 3 : 1} align="left">
-                        <h3 className="title" style={dashboardStyles.headerTitle}>
-                            LPC Monitor
-                        </h3>
                     </Grid>
                 </Grid>
 
