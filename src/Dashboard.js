@@ -190,21 +190,19 @@ class Dashboard extends Component {
                 </Grid>
 
                 <Grid container xs={12} style={dashboardStyles.body}>
-                    <Grid item xs={this.state.mobile ? 12 : this.getInvestigateSensors().length !== 0 ? 6 : 12} style={dashboardStyles.item}>
+                    <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.paper}>
                             <h3 className="title">System Status</h3>
                             <div>{this.getSystemStatus()}</div>
                         </Paper>
                     </Grid>
 
-                    {this.getInvestigateSensors().length !== 0 
-                    &&  <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
-                            <Paper elevation={4} style={dashboardStyles.paper}>
-                                <h3 className="title">Investigate</h3>
-                                <div>{this.getInvestigateSensors()}</div>
-                            </Paper>
-                        </Grid>
-                    }
+                    <Grid item xs={this.state.mobile ? 12 : 6} style={dashboardStyles.item}>
+                        <Paper elevation={4} style={dashboardStyles.paper}>
+                            <h3 className="title">Investigate</h3>
+                            <div>{this.getInvestigateSensors()}</div>
+                        </Paper>
+                    </Grid>
                     
                     <Grid item xs={12} style={dashboardStyles.item}>
                         <Paper elevation={4} style={dashboardStyles.chartPaper}>
