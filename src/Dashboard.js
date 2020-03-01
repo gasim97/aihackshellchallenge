@@ -64,14 +64,10 @@ const dashboardStyles = {
         paddingRight: "3%"
     },
     red: {
-        position: "absolute",
         color: "red",
-        right: "15vh"
     },
     blue: {
-        position: "absolute",
         color: "#1791cf",
-        right: "5vh"
     },
     playButton: {
         float: "left",
@@ -220,7 +216,10 @@ class Dashboard extends Component {
                                     {this.state.playing? <Pause onPlayerClick={this.handlePlayerClick} /> : <Play onPlayerClick={this.handlePlayerClick} />}
                                 </div>
                             </div>
-                            <p style={dashboardStyles.blue}>- Predicted Anomaly</p><p style={dashboardStyles.red}>- Actual Anomaly</p>
+                            <Grid item xs={12} align="right" style={dashboardStyles.item}>
+                                <p style={dashboardStyles.blue}>- Predicted Anomaly</p>
+                                <p style={dashboardStyles.red}>- Actual Anomaly</p>
+                            </Grid>
                         </Paper>
                     </Grid>
 
