@@ -61,15 +61,20 @@ const dashboardStyles = {
     },
     headerTitle: {
         color: colorScheme.secondary,
-        paddingRight: "3%",
+        paddingRight: "3%"
     },
     red: {
-        color: "red"
+        position: "absolute",
+        color: "red",
+        right: "15vh"
     },
     blue: {
-        color: "#1791cf"
+        position: "absolute",
+        color: "#1791cf",
+        right: "5vh"
     },
     playButton: {
+        float: "left",
         position: "relative",
         width: "4.5vh",
         height: "3vh",
@@ -130,7 +135,7 @@ class Dashboard extends Component {
 
     componentDidMount() {
         this.setState({mobile: isMobile});
-        setInterval(() => this.updateSliderValue(), 500)
+        setInterval(() => this.updateSliderValue(), 400)
     }
 
     updateSliderValue() {
