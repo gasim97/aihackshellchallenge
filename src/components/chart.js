@@ -1,18 +1,19 @@
 import React from 'react'
 import { Chart } from 'react-charts'
-import * as anomaly_1 from "../data/anomaly_1.json";
+import * as anomaly_1 from "../data/anomaly.json";
 
-function get_trip_risk() {
-    var trip_risk = [];
+function get_predicted_anomalies() {
+    var predicted_anomolies = [];
     const data = anomaly_1.values;
     const sample_size = data.length;
     for (var i = 0; i < sample_size; i++) {
-        trip_risk.push(
-            {x: i,
-            y: data[i].trip_risk}
+        predicted_anomolies.push(
+            {x: data[i].index,
+            y: data[i].predicted_anomaly}
         )
     }
-    return trip_risk;
+    predicted_anomolies.push({x: 118685, y:0});
+    return predicted_anomolies;
 }
 
 function get_anomalies() {
@@ -21,10 +22,11 @@ function get_anomalies() {
     const sample_size = data.length;
     for (var i = 0; i < sample_size; i++) {
         anomalies.push(
-            {x: i,
+            {x: data[i].index,
             y: data[i].anomaly}
         )
     }
+    anomalies.push({x: 118685, y:0});
     return anomalies;
 }
  
@@ -33,7 +35,7 @@ function MyChart() {
       () => [
         {
           label: 'Series 1',
-          data: get_trip_risk()
+          data: get_predicted_anomalies()
         },
         {
             label: 'Series 2',

@@ -4,14 +4,12 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { isMobile } from 'react-device-detect';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 
 import Slider from '@material-ui/core/Slider';
 import MyChart from './components/chart';
 import Play from './components/Play';
 import Pause from './components/Pause';
-import * as anomaly_1 from "./data/anomaly_1.json";
+import * as anomaly_1 from "./data/anomaly.json";
 
 
 const colorScheme = {
@@ -65,6 +63,12 @@ const dashboardStyles = {
         color: colorScheme.secondary,
         paddingRight: "3%",
     },
+    red: {
+        color: "red"
+    },
+    blue: {
+        color: "#1791cf"
+    },
     playButton: {
         position: "relative",
         width: "4.5vh",
@@ -99,9 +103,6 @@ const PrettoSlider = withStyles({
         },
     },
     active: {},
-    valueLabel: {
-        left: 'calc(-50% + 4px)',
-    },
     track: {
         height: 8,
         borderRadius: 4,
@@ -121,7 +122,7 @@ class Dashboard extends Component {
             probabilityOfFailure: null,
             predictionData: [],
             anomalyData: [],
-            sliderValue: 0,
+            sliderValue: 118645,
             mobile: false,
             playing: false,
         }
@@ -129,28 +130,28 @@ class Dashboard extends Component {
 
     componentDidMount() {
         this.setState({mobile: isMobile});
-        setInterval(() => this.updateSliderValue(), 200)
+        setInterval(() => this.updateSliderValue(), 500)
     }
 
     updateSliderValue() {
         if (this.state.playing) {
-            if (this.state.sliderValue < 100) {
+            if (this.state.sliderValue < 118684) {
                 this.setState(prevState => ({
                     sliderValue: prevState.sliderValue + 1
                 }))
             } else {
-                this.setState({sliderValue: 0})
+                this.setState({sliderValue: 118645})
             }
         }
     }
 
     getInvestigateSensors() {
-        const listItems = anomaly_1.values[this.state.sliderValue].dodgy_sensors.map((d) => <p key={Object.keys(d)[0]}>{Object.keys(d)[0]}: {Object.values(d)[0]}</p>)
+        const listItems = anomaly_1.values[this.state.sliderValue - 118645].dodgy_sensors.map((d) => <p key={Object.keys(d)[0]}>{Object.keys(d)[0]}: {Object.values(d)[0]}</p>)
         return listItems
     }
 
     getSystemStatus() {
-        const status = anomaly_1.values[this.state.sliderValue].status;
+        const status = anomaly_1.values[this.state.sliderValue - 118645].status;
         return status
     }
 
@@ -208,12 +209,13 @@ class Dashboard extends Component {
                             <p>
                                 Select a time instant
                             </p>
-                            <PrettoSlider value={this.state.sliderValue} valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChange={(_, value) => {this.setState({sliderValue: value})}} />
+                            <PrettoSlider value={this.state.sliderValue} min={118645} max={118684} valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChange={(_, value) => {this.setState({sliderValue: value})}} />
                             <div style={dashboardStyles.playButton}>
                                 <div style={dashboardStyles.playButtonSvg}>
                                     {this.state.playing? <Pause onPlayerClick={this.handlePlayerClick} /> : <Play onPlayerClick={this.handlePlayerClick} />}
                                 </div>
                             </div>
+                            <p style={dashboardStyles.blue}>- Predicted Anomaly</p><p style={dashboardStyles.red}>- Actual Anomaly</p>
                         </Paper>
                     </Grid>
 

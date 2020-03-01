@@ -1,0 +1,300 @@
+{
+    "values": [
+      {
+        "index": 118645,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118646,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118647,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118648,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118649,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118650,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118651,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118652,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118653,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118654,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118655,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118656,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118657,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118658,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118659,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118660,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118661,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118662,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118663,
+        "status": "Warning - Anomaly Detected",
+        "predicted_anomaly": "1",
+        "anomaly": 0,
+        "dodgy_sensors": [
+          {"Pressure Transmitting 58": -0.6131761},
+          {"Unknown Computing 306": 5.0213875},
+          {"Pressure Emergency Action 63": 0.1207115}
+        ]
+      },
+      {
+        "index": 118664,
+        "status": "Warning - Anomaly Detected",
+        "predicted_anomaly": "1",
+        "anomaly": 0,
+        "dodgy_sensors": [
+          {"Pressure Transmitting 58": -0.4716194},
+          {"Temperature Difference 260": 75.5670878},
+          {"Temperature Indicating 79": 11.8317724}
+        ]
+      },
+      {
+        "index": 118665,
+        "status": "Warning - Anomaly Detected",
+        "predicted_anomaly": "1",
+        "anomaly": 1,
+        "dodgy_sensors": [
+          {"Classified Indicating 332": 1750.17907},
+          {"Temperature Difference 260": 100.1037198},
+          {"Flow Rate Difference 211": 125.1007349}
+        ]
+      },
+      {
+        "index": 118666,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118667,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118668,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118669,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118670,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118671,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118672,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118673,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118674,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118675,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118676,
+        "status": "Warning - Anomaly Detected",
+        "predicted_anomaly": "1",
+        "anomaly": 0,
+        "dodgy_sensors": [
+          {"Unknown Computing 127": 12.8471295},
+          {"Unknown Solenoid 167": 23.2917899},
+          {"Unknown Computing 131": 7.8250413}
+        ]
+      },
+      {
+        "index": 118677,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118678,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118679,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118680,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118681,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118682,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118683,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      },
+      {
+        "index": 118684,
+        "status": "Operating safely",
+        "predicted_anomaly": 0,
+        "anomaly": 0,
+        "dodgy_sensors": []
+      }
+    ]
+  }
