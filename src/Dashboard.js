@@ -222,7 +222,7 @@ class Dashboard extends Component {
                             </Grid>
                         </Paper>
                     </Grid>
-                    Disclaimer: This is website is in no way associated with Royal Dutch Shell.
+                    Disclaimer: This website is in no way associated with Royal Dutch Shell.
 
                 </Grid>
 
