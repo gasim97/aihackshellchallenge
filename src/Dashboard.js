@@ -210,7 +210,7 @@ class Dashboard extends Component {
                             <p>
                                 Select a time instant
                             </p>
-                            <PrettoSlider value={this.state.sliderValue} min={118645} max={118684} valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={0} onChange={(_, value) => {this.setState({sliderValue: value})}} />
+                            <PrettoSlider value={this.state.sliderValue} min={118645} max={118684} valueLabelDisplay="off" aria-label="pretto slider" defaultValue={0} onChange={(_, value) => {this.setState({sliderValue: value})}} />
                             <div style={dashboardStyles.playButton}>
                                 <div style={dashboardStyles.playButtonSvg}>
                                     {this.state.playing? <Pause onPlayerClick={this.handlePlayerClick} /> : <Play onPlayerClick={this.handlePlayerClick} />}
