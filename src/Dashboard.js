@@ -222,7 +222,7 @@ class Dashboard extends Component {
                             </Grid>
                         </Paper>
                     </Grid>
-                    Disclaimer: This website is in no way associated with Royal Dutch Shell.
+                    <p style={{paddingLeft: "2%", width: "100%", textAlign: "left"}} >Disclaimer: This website is in no way associated with Royal Dutch Shell.</p>
 
                 </Grid>
 
