@@ -169,11 +169,6 @@ class Dashboard extends Component {
             <Grid xs={12} style={dashboardStyles.page}>
                 <Grid container xs={12} style={dashboardStyles.header}>
                     <Grid item xs={4} align="left">
-                        <img 
-                            src={"https://www.wikizeroo.org/index.php?q=aHR0cDovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9lbi90aHVtYi9lL2U4L1NoZWxsX2xvZ28uc3ZnLzI3MnB4LVNoZWxsX2xvZ28uc3ZnLnBuZw"} 
-                            alt={"Logo"}
-                            style={dashboardStyles.logo}
-                        />
                     </Grid>
                     <Grid item xs={4} align="center">
                         <h3 className="title" style={dashboardStyles.headerTitle}>
